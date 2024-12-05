@@ -1,29 +1,29 @@
 resource "aws_vpc" "tokyo_vpc" {
-  cidr_block       = "10.9.0.0/16"
-  provider = aws.tokyo
+  provider   = aws.tokyo
+  cidr_block = var.tokyo_vpc_cidr
 
   instance_tenancy = "default"
   tags = {
     Name    = "tokyo_vpc"
-    Service = "J-Tele-Doctor"
+    Service = var.main_service
   }
 
   enable_dns_hostnames = true
 }
 
 resource "aws_vpc" "new_york_vpc" {
-  cidr_block       = "10.8.0.0/16"
-  provider = aws.nvirginia
+  provider   = aws.nvirginia
+  cidr_block = var.new_york_vpc_cidr
 
   instance_tenancy = "default"
   tags = {
     Name    = "new_york_vpc"
-    Service = "J-Tele-Doctor"
+    Service = var.main_service
   }
 
   enable_dns_hostnames = true
 }
 
 output "name" {
-  value = var.my_first_var
+  value = var.main_service
 }
