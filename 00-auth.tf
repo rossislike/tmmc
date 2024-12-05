@@ -17,3 +17,13 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
+provider "aws" {
+  alias  = "london"
+  region = "eu-west-2"
+}
+
+provider "aws" {
+  alias  = "california"
+  region = "us-west-1"
+}
+
