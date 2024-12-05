@@ -24,3 +24,6 @@ resource "aws_vpc" "new_york_vpc" {
   enable_dns_hostnames = true
 }
 
+output "name" {
+  value = var.my_first_var
+}
