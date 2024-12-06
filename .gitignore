@@ -38,3 +38,4 @@ terraform.rc
 cli.txt
 cli2.txt
 *.docx
+terraform_output.txt
