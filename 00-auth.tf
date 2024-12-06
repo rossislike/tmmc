@@ -23,7 +23,25 @@ provider "aws" {
 }
 
 provider "aws" {
+  alias  = "saopaulo"
+  region = "sa-east-1"
+}
+
+provider "aws" {
+  alias  = "australia"
+  region = "ap-southeast-2"
+}
+
+provider "aws" {
+  alias  = "hongkong"
+  region = "ap-east-1"
+}
+
+provider "aws" {
   alias  = "california"
   region = "us-west-1"
 }
 
+  alias  = "california"
+  region = "us-west-1"
+}
