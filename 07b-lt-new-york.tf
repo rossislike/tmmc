@@ -4,7 +4,7 @@ resource "aws_launch_template" "new_york_http_lt" {
     description = "new_york_http_lt"
     image_id = "ami-0453ec754f44f9a4a" 
     instance_type = "t2.micro"
-    user_data = filebase64("${path.module}/basic_userdata")
+    user_data = filebase64("${path.module}/basic_userdata.sh")
 
     metadata_options {
       http_endpoint = "enabled"
@@ -55,5 +55,5 @@ resource "aws_launch_template" "new_york_http_lt" {
 4. **Sao Paulo** — `sa-east-1` (South America - São Paulo)  ami-0c820c196a818d66a
 5. **Australia** — `ap-southeast-2` (Asia Pacific - Sydney)  ami-0146fc9ad419e2cfd
 6. **Hong Kong** — `ap-east-1` (Asia Pacific - Hong Kong)  ami-06f707739f2271995
-7. **California** — `us-west-1
+7. **California** — `us-west-1` (US West - N. California)  ami-038bba9a164eb3dc1
 */
