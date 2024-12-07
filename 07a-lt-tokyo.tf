@@ -4,7 +4,7 @@ resource "aws_launch_template" "tokyo_http_lt" {
     description = "tokyo_http_lt"
     image_id = "ami-023ff3d4ab11b2525" 
     instance_type = "t2.micro"
-    user_data = filebase64("${path.module}/basic_userdata")
+    user_data = filebase64("${path.module}/basic_userdata.sh")
 
     metadata_options {
       http_endpoint = "enabled"
