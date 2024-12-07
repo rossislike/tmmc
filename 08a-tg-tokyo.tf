@@ -1,5 +1,5 @@
 resource "aws_alb_target_group" "tokyo_http_target_group" {
-  provider = aws.tokyo
+  provider    = aws.tokyo
   name        = "tokyo-http-target-group"
   target_type = "instance"
   port        = 80
@@ -18,7 +18,7 @@ resource "aws_alb_target_group" "tokyo_http_target_group" {
 
   vpc_id = aws_vpc.tokyo_vpc.id
   tags = {
-    Name = "tokyo_http_target_group"
+    Name    = "tokyo_http_target_group"
     Service = var.main_service
   }
 }

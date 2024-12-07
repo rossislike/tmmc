@@ -1,5 +1,5 @@
 resource "aws_alb_target_group" "new_york_http_target_group" {
-  provider = aws.nvirginia
+  provider    = aws.nvirginia
   name        = "new-york-http-target-group"
   target_type = "instance"
   port        = 80
@@ -18,7 +18,7 @@ resource "aws_alb_target_group" "new_york_http_target_group" {
 
   vpc_id = aws_vpc.new_york_vpc.id
   tags = {
-    Name = "new_york_http_target_group"
+    Name    = "new_york_http_target_group"
     Service = var.main_service
   }
 }
