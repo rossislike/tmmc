@@ -27,25 +27,25 @@ resource "aws_route_table" "tokyo_prv_rtb" {
   }
 }
 
-resource "aws_route_table_association" "tokyo_pub_subnet_1a_rtetbl_assoc" {
+resource "aws_route_table_association" "tokyo_pub_subnet_1a_rtb_assoc" {
   provider       = aws.tokyo
   subnet_id      = aws_subnet.tokyo_pub_subnet_1a.id
   route_table_id = aws_route_table.tokyo_pub_rtb.id
 }
 
-resource "aws_route_table_association" "tokyo_pub_subnet_1c_rtetbl_assoc" {
+resource "aws_route_table_association" "tokyo_pub_subnet_1c_rtb_assoc" {
   provider       = aws.tokyo
   subnet_id      = aws_subnet.tokyo_pub_subnet_1c.id
   route_table_id = aws_route_table.tokyo_pub_rtb.id
 }
 
-resource "aws_route_table_association" "tokyo_prv_subnet_1a_rtetbl_assoc" {
+resource "aws_route_table_association" "tokyo_prv_subnet_1a_rtb_assoc" {
   provider       = aws.tokyo
   subnet_id      = aws_subnet.tokyo_prv_subnet_1a.id
   route_table_id = aws_route_table.tokyo_prv_rtb.id
 }
 
-resource "aws_route_table_association" "tokyo_prv_subnet_1c_rtetbl_assoc" {
+resource "aws_route_table_association" "tokyo_prv_subnet_1c_rtb_assoc" {
   provider       = aws.tokyo
   subnet_id      = aws_subnet.tokyo_prv_subnet_1c.id
   route_table_id = aws_route_table.tokyo_prv_rtb.id
