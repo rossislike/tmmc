@@ -45,7 +45,7 @@ resource "aws_subnet" "tokyo_prv_subnet_1c" {
     Service = var.main_service
   }
 }
-/*
+
 resource "aws_subnet" "tokyo_prv_subnet_1d" {
   provider          = aws.tokyo
   vpc_id            = aws_vpc.tokyo_vpc.id
@@ -57,4 +57,3 @@ resource "aws_subnet" "tokyo_prv_subnet_1d" {
     Service = var.main_service
   }
 }
-*/

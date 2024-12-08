@@ -1,4 +1,4 @@
-# Asia-Pacific Transit Gateway (APAC) - Consolidating Tokyo, Hong Kong, Sydney
+/*# Asia-Pacific Transit Gateway (APAC) - Consolidating Tokyo, Hong Kong, Sydney
 resource "aws_ec2_transit_gateway" "tgw_apac" {
   provider = aws.tokyo
   description = "Transit Gateway for APAC regions (Tokyo, Hong Kong, Sydney)"
@@ -131,3 +131,4 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_us_west_1
   provider                      = aws.california
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.us_west_1_to_ap_northeast_1.id
 }
+*/

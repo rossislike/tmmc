@@ -1,23 +1,23 @@
-resource "aws_autoscaling_group" "saopaulo_http_asg" {
-  provider                  = aws.saopaulo
-  name                      = "saopaulo-http-asg"
-  max_size                  = 2
+resource "aws_autoscaling_group" "new_york_http_asg" {
+  provider                  = aws.nvirginia
+  name                      = "new_york-http-asg"
+  max_size                  = 4
   min_size                  = 1
   desired_capacity          = 1
   health_check_grace_period = 300
   default_instance_warmup   = -1
 
   launch_template {
-    id      = aws_launch_template.saopaulo_http_lt.id
+    id      = aws_launch_template.new_york_http_lt.id
     version = "$Default"
   }
 
   vpc_zone_identifier = [
-    aws_subnet.saopaulo_prv_subnet_1a.id,
-    aws_subnet.saopaulo_prv_subnet_1b.id
+    aws_subnet.new_york_prv_subnet_1a.id,
+    aws_subnet.new_york_prv_subnet_1b.id
   ]
   health_check_type = "ELB"
-  target_group_arns = [aws_alb_target_group.saopaulo_http_target_group.arn]
+  target_group_arns = [aws_alb_target_group.new_york_http_target_group.arn]
 
   instance_maintenance_policy {
     min_healthy_percentage = 90
@@ -26,15 +26,15 @@ resource "aws_autoscaling_group" "saopaulo_http_asg" {
 
   tag {
     key                 = "name"
-    value               = "saopaulo_http_asg"
+    value               = "new_york_http_asg"
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_policy" "saopaulo_http_asg_policy" {
-  provider               = aws.saopaulo
+resource "aws_autoscaling_policy" "new_york_http_asg_policy" {
+  provider               = aws.nvirginia
   name                   = "Target Tracking Policy"
-  autoscaling_group_name = aws_autoscaling_group.saopaulo_http_asg.name
+  autoscaling_group_name = aws_autoscaling_group.new_york_http_asg.name
   policy_type            = "TargetTrackingScaling"
   target_tracking_configuration {
     disable_scale_in = false
@@ -45,9 +45,9 @@ resource "aws_autoscaling_policy" "saopaulo_http_asg_policy" {
   }
 }
 
-# resource "aws_autoscaling_group" "saopaulo_tls_asg" {
-#     provider = aws.saopaulo
-#   name                      = "saopaulo_tls_asg"
+# resource "aws_autoscaling_group" "new_york_tls_asg" {
+#     provider = aws.nvirginia
+#   name                      = "new_york_tls_asg"
 #   max_size                  = 6
 #   min_size                  = 1
 #   desired_capacity          = 3
@@ -55,16 +55,16 @@ resource "aws_autoscaling_policy" "saopaulo_http_asg_policy" {
 #   default_instance_warmup   = -1
 
 #   launch_template {
-#     id      = aws_launch_template.saopaulo_tls_lt.id
+#     id      = aws_launch_template.new_york_tls_lt.id
 #     version = "$Default"
 #   }
 
 #   vpc_zone_identifier = [
-#     aws_subnet.saopaulo_prv_subnet_1a.id,
-#     aws_subnet.saopaulo_prv_subnet_1c.id
+#     aws_subnet.new_york_prv_subnet_1a.id,
+#     aws_subnet.new_york_prv_subnet_1c.id
 #   ]
 #   health_check_type = "ELB"
-#   target_group_arns = [aws_alb_target_group.saopaulo_tls_target_group.arn]
+#   target_group_arns = [aws_alb_target_group.new_york_tls_target_group.arn]
 
 #   instance_maintenance_policy {
 #     min_healthy_percentage = 90
@@ -73,15 +73,15 @@ resource "aws_autoscaling_policy" "saopaulo_http_asg_policy" {
 
 #   tag {
 #     key                 = "name"
-#     value               = "saopaulo_tls_asg"
+#     value               = "new_york_tls_asg"
 #     propagate_at_launch = true
 #   }
 # }
 
-# resource "aws_autoscaling_policy" "saopaulo_tls_asg_policy" {
-#     provider = aws.saopaulo
+# resource "aws_autoscaling_policy" "new_york_tls_asg_policy" {
+#     provider = aws.nvirginia
 #   name                   = "Target Tracking Policy"
-#   autoscaling_group_name = aws_autoscaling_group.saopaulo_tls_asg.name
+#   autoscaling_group_name = aws_autoscaling_group.new_york_tls_asg.name
 #   policy_type            = "TargetTrackingScaling"
 #   target_tracking_configuration {
 #     disable_scale_in = false
