@@ -33,6 +33,11 @@ variable "tokyo_prv_subnet_1c" {
   default = ""
 }
 
+#variable "tokyo_prv_subnet_1d" {
+#  type    = string
+#  default = ""
+#}
+
 variable "new_york_vpc_cidr" {
   type    = string
   default = ""
