@@ -1,0 +1,31 @@
+nvir_tgw_rtb > routes
+-------------------------------------------------------------
+| cidr          | attachment       | resource id | res type |
+|---------------|------------------|-------------|----------|
+| ohio_vpc.cidr | nvir_to_ohio_att | ohio_tgw.id | peering  |
+| nvir_vpc.cidr | nvir_vpc_att     | nvir_vpc.id | vpc      |
+-------------------------------------------------------------
+
+nvir_tgw_rtb > associations
+-----------------------------------------------
+| attachment         | resource id | res type |
+|--------------------|-------------|----------|
+| nvir_to_ohio_att   | ohio_tgw.id | peering  |
+| nvir_vpc_att       | nvir_vpc.id | vpc      |
+-----------------------------------------------
+
+ohio_tgw_rtb > routes
+-------------------------------------------------------------
+| cidr          | attachment       | resource id | res type |
+|---------------|------------------|-------------|----------|
+| nvir_vpc.cidr | ohio_fr_nvir_att | nvir_tgw.id | peering  |
+| ohio_vpc.cidr | ohio_vpc_att     | ohio_vpc.id | vpc      |
+-------------------------------------------------------------
+
+ohio_tgw_rtb > associations
+---------------------------------------------
+| attachment       | resource id | res type |
+|------------------|-------------|----------|
+| ohio_fr_nvir_att | ohio_tgw.id | peering  |
+| ohio_vpc_att     | ohio_vpc.id | vpc      |
+---------------------------------------------
