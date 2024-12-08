@@ -2,8 +2,9 @@ resource "aws_launch_template" "hongkong_http_lt" {
   provider      = aws.hongkong
   name          = "hongkong_http_lt"
   description   = "hongkong_http_lt"
-  image_id      = "ami-06f707739f2271995"
-  instance_type = "t2.micro"
+  image_id      = "ami-0b443fc33d00d05e1"
+  instance_type = "t3.nano"
+
   user_data     = filebase64("${path.module}/basic_userdata.sh")
 
   metadata_options {
@@ -28,7 +29,8 @@ resource "aws_launch_template" "hongkong_http_lt" {
 #     name = "hongkong_tls_lt"
 #     description = "hong_kong_tls_lt"
 #     image_id = "ami-06f707739f2271995" 
-#     instance_type = "t2.micro"
+#     instance_type = "t3.micro"
+
 #     user_data = filebase64("${path.module}/basic_userdata")
 
 #     metadata_options {

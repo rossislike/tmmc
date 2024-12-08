@@ -15,6 +15,8 @@ The following VPCs have been created along with their corresponding subnets:
    - Private Subnet 1A ID: ${aws_subnet.tokyo_prv_subnet_1a.id}, Name: tokyo_prv_subnet_1a
    - Private Subnet 1C CIDR: ${var.tokyo_prv_subnet_1c}
    - Private Subnet 1C ID: ${aws_subnet.tokyo_prv_subnet_1c.id}, Name: tokyo_prv_subnet_1c
+   - Private Subnet 1D CIDR: ${var.tokyo_prv_subnet_1d}
+   - Private Subnet 1D ID: ${aws_subnet.tokyo_prv_subnet_1d.id},
 
 2. Region: New York (us-east-1)
    - VPC CIDR: ${var.new_york_vpc_cidr}
