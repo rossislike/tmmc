@@ -1,10 +1,10 @@
 resource "aws_launch_template" "new_york_http_lt" {
-    provider = aws.nvirginia
-    name = "new_york_http_lt"
-    description = "new_york_http_lt"
-    image_id = "ami-0453ec754f44f9a4a" 
-    instance_type = "t2.micro"
-    user_data = filebase64("${path.module}/basic_userdata.sh")
+  provider      = aws.nvirginia
+  name          = "new_york_http_lt"
+  description   = "new_york_http_lt"
+  image_id      = "ami-0453ec754f44f9a4a"
+  instance_type = "t2.micro"
+  user_data     = filebase64("${path.module}/basic_userdata.sh")
 
   metadata_options {
     http_endpoint               = "enabled"
