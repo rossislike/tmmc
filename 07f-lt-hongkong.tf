@@ -5,7 +5,7 @@ resource "aws_launch_template" "hongkong_http_lt" {
   image_id      = "ami-0b443fc33d00d05e1"
   instance_type = "t3.nano"
 
-  user_data     = filebase64("${path.module}/basic_userdata.sh")
+  user_data = filebase64("${path.module}/basic_userdata.sh")
 
   metadata_options {
     http_endpoint               = "enabled"
