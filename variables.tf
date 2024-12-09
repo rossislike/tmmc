@@ -16,6 +16,11 @@ variable "tokyo_availability_zone_2" {
   type    = string
   default = ""
 }
+
+variable "tokyo_availability_zone_3" {
+  type    = string
+  default = ""
+}
 variable "tokyo_pub_subnet_1a" {
   type    = string
   default = ""
@@ -29,6 +34,11 @@ variable "tokyo_prv_subnet_1a" {
   default = ""
 }
 variable "tokyo_prv_subnet_1c" {
+  type    = string
+  default = ""
+}
+
+variable "tokyo_prv_subnet_1d" {
   type    = string
   default = ""
 }
