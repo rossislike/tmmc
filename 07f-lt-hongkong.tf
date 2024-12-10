@@ -1,4 +1,4 @@
-resource "aws_launch_template" "hongkong_app" {
+resource "aws_launch_template" "hongkong_http_lt" {
   provider      = aws.hongkong
   name          = "hongkong_app"
   description   = "hongkong_app"

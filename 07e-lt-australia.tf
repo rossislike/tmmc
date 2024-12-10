@@ -1,4 +1,4 @@
-resource "aws_launch_template" "australia_app" {
+resource "aws_launch_template" "australia_http_lt" {
   provider      = aws.australia
   name          = "australia_app"
   description   = "australia_app"

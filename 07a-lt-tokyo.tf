@@ -1,4 +1,4 @@
-resource "aws_launch_template" "tokyo_app" {
+resource "aws_launch_template" "tokyo_http_lt" {
   provider      = aws.tokyo
   name          = "tokyo_app"
   description   = "tokyo_app"
