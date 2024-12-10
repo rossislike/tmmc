@@ -1,7 +1,7 @@
-resource "aws_launch_template" "tokyo_http_lt" {
+resource "aws_launch_template" "tokyo_app" {
   provider      = aws.tokyo
-  name          = "tokyo_http_lt"
-  description   = "tokyo_http_lt"
+  name          = "tokyo_app"
+  description   = "tokyo_app"
   image_id      = "ami-023ff3d4ab11b2525"
   instance_type = "t2.micro"
   user_data     = filebase64("${path.module}/basic_userdata.sh")
@@ -16,7 +16,7 @@ resource "aws_launch_template" "tokyo_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "tokyo_http_lt"
+      Name    = "tokyo_app"
       Service = var.main_service
       Env     = "dev"
     }
