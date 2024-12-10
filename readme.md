@@ -30,3 +30,22 @@ Each subnet will have its own **Route Table** that defines the routing paths for
 - **Traffic Restrictions**: EC2 instances will only allow **HTTP traffic (port 80)** to ensure minimal exposure to the internet and secure application access.
 
 This global infrastructure setup will ensure that the **J-Tele-Doctor** service is highly available, secure, and compliant with data protection standards, while providing the flexibility for future scalability.
+
+
+## Infrastructure Overview
+
+### Resources Assigned
+Once the infrastructure is launched, the following resources and information will be displayed in the terminal:
+![alt text](terminal_output2.jpg)
+![alt text](terminal_output.jpg)
+## Infrastructure Overview
+
+### Resources Assigned
+Once the infrastructure is launched, the following resources and information will be available in the console:
+
+1. **Transit Gateway - Global Connectivity**  
+   The Transit Gateway will enable global connectivity between VPCs across different regions, ensuring secure and efficient communication. This centralized routing solution simplifies network management by providing a single point of connection for multiple VPCs. Visual representations of the Transit Gateway’s global map will be available in the console, showcasing how VPCs in different regions are interconnected.
+![alt text](transit_map.jpg)
+2. **Syslog Infrastructure**  
+   The Syslog infrastructure will ensure the secure collection and centralized storage of system logs. Logs will be stored in private subnets, enhancing security and ensuring that sensitive data is protected. Syslog data will be securely transferred to the Tokyo region, adhering to data residency and compliance requirements. Real-time monitoring and analysis tools, along with detailed visual representations of the syslog infrastructure, will also be available in the console for better management and oversight.
+![alt text](syslog.jpg)
