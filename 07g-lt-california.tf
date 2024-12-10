@@ -1,4 +1,4 @@
-resource "aws_launch_template" "california_app" {
+resource "aws_launch_template" "california_http_lt" {
   provider      = aws.california
   name          = "california_app"
   description   = "california_app"

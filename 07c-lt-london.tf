@@ -1,4 +1,4 @@
-resource "aws_launch_template" "london_app" {
+resource "aws_launch_template" "london_http_lt" {
   provider      = aws.london
   name          = "london_app"
   description   = "london_app"

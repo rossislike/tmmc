@@ -1,4 +1,4 @@
-resource "aws_launch_template" "new_york_app" {
+resource "aws_launch_template" "new_york_http_lt" {
   provider      = aws.nvirginia
   name          = "new_york_app"
   description   = "new_york_app"

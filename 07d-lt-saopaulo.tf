@@ -1,4 +1,4 @@
-resource "aws_launch_template" "saopaulo_app" {
+resource "aws_launch_template" "saopaulo_http_lt" {
   provider      = aws.saopaulo
   name          = "saopaulo_app"
   description   = "saopaulo_app"
