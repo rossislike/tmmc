@@ -1,7 +1,7 @@
-resource "aws_launch_template" "saopaulo_http_lt" {
+resource "aws_launch_template" "saopaulo_app" {
   provider      = aws.saopaulo
-  name          = "saopaulo_http_lt"
-  description   = "saopaulo_http_lt"
+  name          = "saopaulo_app"
+  description   = "saopaulo_app"
   image_id      = "ami-0c820c196a818d66a"
   instance_type = "t2.micro"
   user_data     = filebase64("${path.module}/basic_userdata.sh")
@@ -16,7 +16,7 @@ resource "aws_launch_template" "saopaulo_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "saopaulo_http_lt"
+      Name    = "saopaulo_app"
       Service = var.main_service
       Env     = "dev"
     }

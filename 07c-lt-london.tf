@@ -1,7 +1,7 @@
-resource "aws_launch_template" "london_http_lt" {
+resource "aws_launch_template" "london_app" {
   provider      = aws.london
-  name          = "london_http_lt"
-  description   = "london_http_lt"
+  name          = "london_app"
+  description   = "london_app"
   image_id      = "ami-0c76bd4bd302b30ec"
   instance_type = "t2.micro"
   user_data     = filebase64("${path.module}/basic_userdata.sh")
@@ -16,7 +16,7 @@ resource "aws_launch_template" "london_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "london_http_lt"
+      Name    = "london_app"
       Service = var.main_service
       Env     = "dev"
     }

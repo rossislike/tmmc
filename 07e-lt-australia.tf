@@ -1,7 +1,7 @@
-resource "aws_launch_template" "australia_http_lt" {
+resource "aws_launch_template" "australia_app" {
   provider      = aws.australia
-  name          = "australia_http_lt"
-  description   = "australia_http_lt"
+  name          = "australia_app"
+  description   = "australia_app"
   image_id      = "ami-0146fc9ad419e2cfd"
   instance_type = "t2.micro"
   user_data     = filebase64("${path.module}/basic_userdata.sh")
@@ -16,7 +16,7 @@ resource "aws_launch_template" "australia_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "australia_http_lt"
+      Name    = "australia_app"
       Service = var.main_service
       Env     = "dev"
     }

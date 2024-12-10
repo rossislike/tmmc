@@ -1,7 +1,7 @@
-resource "aws_launch_template" "new_york_http_lt" {
+resource "aws_launch_template" "new_york_app" {
   provider      = aws.nvirginia
-  name          = "new_york_http_lt"
-  description   = "new_york_http_lt"
+  name          = "new_york_app"
+  description   = "new_york_app"
   image_id      = "ami-0453ec754f44f9a4a"
   instance_type = "t2.micro"
   user_data     = filebase64("${path.module}/basic_userdata.sh")
@@ -16,7 +16,7 @@ resource "aws_launch_template" "new_york_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "new_york_http_lt"
+      Name    = "new_york_app"
       Service = var.main_service
       Env     = "dev"
     }

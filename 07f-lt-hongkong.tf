@@ -1,7 +1,7 @@
-resource "aws_launch_template" "hongkong_http_lt" {
+resource "aws_launch_template" "hongkong_app" {
   provider      = aws.hongkong
-  name          = "hongkong_http_lt"
-  description   = "hongkong_http_lt"
+  name          = "hongkong_app"
+  description   = "hongkong_app"
   image_id      = "ami-0b443fc33d00d05e1"
   instance_type = "t3.nano"
 
@@ -17,7 +17,7 @@ resource "aws_launch_template" "hongkong_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "hongkong_http_lt"
+      Name    = "hongkong_app"
       Service = var.main_service
       Env     = "dev"
     }

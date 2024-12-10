@@ -1,7 +1,7 @@
-resource "aws_launch_template" "california_http_lt" {
+resource "aws_launch_template" "california_app" {
   provider      = aws.california
-  name          = "california_http_lt"
-  description   = "california_http_lt"
+  name          = "california_app"
+  description   = "california_app"
   image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
   user_data     = filebase64("${path.module}/basic_userdata.sh")
@@ -16,7 +16,7 @@ resource "aws_launch_template" "california_http_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "california_http_lt"
+      Name    = "california_app"
       Service = var.main_service
       Env     = "dev"
     }

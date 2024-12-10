@@ -29,11 +29,11 @@ resource "aws_route" "tokyo_prv_tgw_route" {
 
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tgw_vpc_att" {
-  provider           = aws.tokyo
-  subnet_ids         = [
+  provider = aws.tokyo
+  subnet_ids = [
     aws_subnet.tokyo_prv_subnet_1a.id,
     aws_subnet.tokyo_prv_subnet_1c.id,
-    aws_subnet.tokyo_prv_subnet_1d.id, 
+    aws_subnet.tokyo_prv_subnet_1d.id,
   ]
   transit_gateway_id = aws_ec2_transit_gateway.tokyo_tgw.id
   vpc_id             = aws_vpc.tokyo_vpc.id
