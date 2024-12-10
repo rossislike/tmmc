@@ -1,3 +1,6 @@
+
+![alt text](tmmc.jpg)
+
 # Armageddon Project: TMMC Global Infrastructure
 
 The **Armageddon Project** focuses on deploying a secure, scalable infrastructure for Tokyo Midtown Medical Center's **J-Tele-Doctor** service. The application will operate in **7 global regions**: Tokyo, New York, London, Sao Paulo, Australia, Hong Kong, and California, using **Auto Scaling Groups (ASGs)** with at least **2 Availability Zones (AZs)** per region. Each region will have **1 EC2 instance** allowing only **HTTP traffic (port 80)**. **Syslog data** will be securely transferred to Japan and stored exclusively in a **private subnet**, with strict compliance ensuring **no personal data** is stored or transferred outside Japan. This setup ensures global availability, data security, and future scalability.
