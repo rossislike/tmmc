@@ -14,7 +14,8 @@ resource "aws_autoscaling_group" "tokyo_http_asg" {
 
   vpc_zone_identifier = [
     aws_subnet.tokyo_prv_subnet_1a.id,
-    aws_subnet.tokyo_prv_subnet_1c.id
+    aws_subnet.tokyo_prv_subnet_1c.id,
+    aws_subnet.tokyo_prv_subnet_1d.id
   ]
   health_check_type = "ELB"
   target_group_arns = [aws_alb_target_group.tokyo_http_target_group.arn]
