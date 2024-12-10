@@ -1,7 +1,7 @@
 
 resource "aws_ec2_transit_gateway_peering_attachment" "tokyo_to_california_tgw_peering_att" {
   provider                = aws.tokyo
-  peer_region             = "eu-west-2"
+  peer_region             = "us-west-1"
   peer_transit_gateway_id = aws_ec2_transit_gateway.california_tgw.id
   transit_gateway_id      = aws_ec2_transit_gateway.tokyo_tgw.id
 
