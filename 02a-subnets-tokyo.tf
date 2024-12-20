@@ -57,3 +57,15 @@ resource "aws_subnet" "tokyo_prv_subnet_1d" {
     Service = var.main_service
   }
 }
+
+resource "aws_subnet" "tokyo_prv_subnet_1d_db" {
+  provider          = aws.tokyo
+  vpc_id            = aws_vpc.tokyo_vpc.id
+  cidr_block        = var.tokyo_prv_subnet_1d_db
+  availability_zone = var.tokyo_availability_zone_3
+
+  tags = {
+    Name    = "tokyo_prv_subnet_1d_db"
+    Service = var.main_service
+  }
+}
