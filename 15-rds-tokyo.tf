@@ -1,20 +1,20 @@
 resource "aws_db_subnet_group" "tokyo_rds_subnet_group" {
-  provider          = aws.tokyo
-  name       = "tokyo-rds-subnet-group"
+  provider = aws.tokyo
+  name     = "tokyo-rds-subnet-group"
   subnet_ids = [
-    aws_subnet.tokyo_prv_subnet_1d_db.id,
+    aws_subnet.tokyo_prv_subnet_db.id,
     aws_subnet.tokyo_prv_subnet_1a.id,
     aws_subnet.tokyo_prv_subnet_1c.id,
   ]
-  
+
   tags = {
-    Name = "tokyo_rds_subnet_group"
+    Name    = "tokyo_rds_subnet_group"
     Service = var.main_service
   }
 }
 
 resource "aws_rds_cluster" "tokyo_aurora_rds" {
-  provider          = aws.tokyo
+  provider               = aws.tokyo
   cluster_identifier     = "tokyoauroracluster"
   engine                 = "aurora-mysql"
   engine_version         = "8.0.mysql_aurora.3.05.2"
@@ -28,7 +28,7 @@ resource "aws_rds_cluster" "tokyo_aurora_rds" {
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {
-  provider          = aws.tokyo
+  provider            = aws.tokyo
   identifier          = "tokyoaurorainstance"
   cluster_identifier  = aws_rds_cluster.tokyo_aurora_rds.id
   instance_class      = "db.r7g.large"
